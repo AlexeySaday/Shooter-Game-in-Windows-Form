@@ -70,13 +70,7 @@ namespace Shoot_Out_Game_MOO_ICT
                 bullet.Dispose();
                 bulletTimer = null;
                 bullet = null;
-            }
-
-
-
-        }
-
-
-
+            } 
+        } 
     }
 }
