@@ -37,8 +37,8 @@ namespace Shoot_Out_Game_MOO_ICT
                 GameTimer.Stop();
             }
 
-            txtAmmo.Text = "Ammo: " + ammo;
-            txtScore.Text = "Kills: " + score;
+            txtAmmo.Text = "Боеприпасы: " + ammo;
+            txtScore.Text = "Количество убийств: " + score;
 
             if (goLeft == true && player.Left > 0)
             {
