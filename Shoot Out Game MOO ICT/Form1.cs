@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic; 
 using System.Windows.Forms;
 
 namespace Shoot_Out_Game_MOO_ICT
 {
     public partial class Form1 : Form
-    {
-
+    { 
         bool goLeft, goRight, goUp, goDown, gameOver;
         string facing = "up";
         int playerHealth = 100;
         int speed = 10;
-        int ammo = 10;
+        int ammo = 100;
         int zombieSpeed = 3;
         Random randNum = new Random();
         int score;
@@ -127,7 +120,7 @@ namespace Shoot_Out_Game_MOO_ICT
                             this.Controls.Remove(x);
                             ((PictureBox)x).Dispose();
                             zombiesList.Remove(((PictureBox)x));
-                            MakeZombies();
+                            MakeMonster();
                         }
                     }
                 }
@@ -228,18 +221,17 @@ namespace Shoot_Out_Game_MOO_ICT
             shootBullet.MakeBullet(this);
         }
 
-        private void MakeZombies()
+        private void MakeMonster()
         {
-            PictureBox zombie = new PictureBox();
-            zombie.Tag = "zombie";
-            zombie.Image = Properties.Resources.zdown;
-            zombie.Left = randNum.Next(0, 900);
-            zombie.Top = randNum.Next(0, 800);
-            zombie.SizeMode = PictureBoxSizeMode.AutoSize;
-            zombiesList.Add(zombie);
-            this.Controls.Add(zombie);
-            player.BringToFront();
-
+            PictureBox monster = new PictureBox();
+            monster.Tag = "zombie";
+            monster.Image = Properties.Resources.zdown;
+            monster.Left = randNum.Next(0, 900);
+            monster.Top = randNum.Next(0, 800);
+            monster.SizeMode = PictureBoxSizeMode.AutoSize;
+            zombiesList.Add(monster);
+            this.Controls.Add(monster);
+            player.BringToFront(); 
         }
 
         private void DropAmmo()
@@ -254,10 +246,7 @@ namespace Shoot_Out_Game_MOO_ICT
             this.Controls.Add(ammo);
 
             ammo.BringToFront();
-            player.BringToFront();
-
-
-
+            player.BringToFront(); 
         }
 
         private void RestartGame()
@@ -273,7 +262,7 @@ namespace Shoot_Out_Game_MOO_ICT
 
             for (int i = 0; i < 3; i++)
             {
-                MakeZombies();
+                MakeMonster();
             }
 
             goUp = false;
