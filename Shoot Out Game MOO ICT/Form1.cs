@@ -10,7 +10,7 @@ namespace Shoot_Out_Game_MOO_ICT
         string facing = "up";
         int playerHealth = 100;
         int speed = 10;
-        int ammo = 10;
+        int ammo = 5;
         int zombieSpeed = 3;
         Random randNum = new Random();
         int score;
